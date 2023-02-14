@@ -1,0 +1,59 @@
+class Employee:
+	countEmp = 1
+	def __init__(self):
+		self.name = " "
+		self.hours = 0
+		self.payPerHours = 0
+		self.salary = 0
+#[---------------------------------------------------------]
+	#GETTING THE EMPLOYEE NAME
+	def setName(self):
+		self.name = input("\tEnter Employee name: ")
+		Employee.countEmp +=1
+#[----------------------------------------------------------]
+	#GETTING THE EMPLOYEE'S HOURS OF WORK
+	def setHours(self):
+		self.hours = int(input("\tEnter no. of hours worked: "))
+#[----------------------------------------------------------]
+	#GETTING THE EMPLOYEE'S TYPE OF WORK
+	def detPayPerHours(self):
+		self.payPerHours = int(input("\tEnter type of employee(1-4): "))
+#[----------------------------------------------------------]
+	#GETTING THE TOTAL SALARY OF THE EMPLOYEE
+	def computeSalary(self):
+			if self.payPerHours ==1:
+				self.salary = self.hours * 200
+			elif self.payPerHours ==2:
+				self.salary = self.hours * 180
+			elif self.payPerHours ==3:
+				self.salary = self.hours * 150
+			elif self.payPerHours ==4:
+				self.salary = self.hours * 130
+			else:
+				raise TypeError("Only 1-4 type of employee.")
+#[----------------------------------------------------------]
+	#DISPLAYING THE DATA OF EMPLOYEE
+	def displayData(self):
+		print(f"\n{self.name}'s salary is {self.salary}.")
+#[---------------------------------------------------]	
+emp1 = Employee( )
+emp2 = Employee( )
+#[---------------------------------------------------]
+print("_" *40)
+print(f"\nEmployee {Employee.countEmp}")
+emp1.setName( )
+emp1.setHours( )
+emp1.detPayPerHours( )
+emp1.computeSalary( )
+#[----------------------------------------------------]
+print(f"Employee {Employee.countEmp}")
+emp2.setName( )
+emp2.setHours( )
+emp2.detPayPerHours( )
+emp2.computeSalary( )
+#[------------------------------------------------------]
+print("*" + "-" * 50, "*") 
+emp1.displayData( )
+emp2.displayData( )
+print("_" * 60)
+#[------------------------------------------------------]
